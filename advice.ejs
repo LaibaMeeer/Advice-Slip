@@ -1,0 +1,31 @@
+<%- include("header.ejs") %>
+
+<% if (locals.slip && locals.slip.advice) { %>
+
+<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSheet">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-header border-bottom-0">
+          <h1 class="modal-title fs-5">Advice </h1>
+        
+          <form action="/" method="get"  >
+            <button  type="submit" class="btn-close " data-bs-dismiss="modal" aria-label="Close" style="margin-left: 370px;" ></button>
+          </form>
+        </div>
+        <div class="modal-body py-0">
+            <p><%= slip.advice %></p>
+        </div>
+        <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+          
+          <form action="/advice" method="get">
+            <button type="submit" class="btn" style="width: 100%;">Get  New Advice</button>
+           </form>      
+            </div>
+      </div>
+    </div>
+  </div>
+<% } %>
+
+  
+
+  <%- include("footer.ejs") %>
